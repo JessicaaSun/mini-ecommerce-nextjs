@@ -1,9 +1,10 @@
 import Loading from "@/app/loading";
+import { BASE_URL } from "@/utils/constant";
 import React, { Suspense } from "react";
 
 async function fetchProductById(id) {
   const product = await fetch(
-    `https://api.escuelajs.co/api/v1/products/${id}`,
+    `${BASE_URL}}products/${id}`,
     {
       cache: "no-store",
     }

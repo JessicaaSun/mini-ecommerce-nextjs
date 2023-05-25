@@ -1,9 +1,10 @@
 import React from "react";
 import CategoryCard from "@/components/card/CategoryCard";
+import { BASE_URL } from "@/utils/constant";
 
 async function fetchCategories() {
   const categories = await fetch(
-    "https://api.escuelajs.co/api/v1/categories?limit=0",
+    `${BASE_URL}categories?limit=0`,
     {
       cache: "no-store",
     }

@@ -1,9 +1,10 @@
 import React from "react";
 import ProductCard from "@/components/card/ProductCard";
+import { BASE_URL } from "@/utils/constant";
 
 async function fetchProduct() {
   const products = await fetch(
-    "https://api.escuelajs.co/api/v1/products?limit=20&offset=1",
+    `${BASE_URL}products?limit=20&offset=1`,
     {
       caches: "no-store",
     }

@@ -1,8 +1,9 @@
 import React from "react";
 import UserCard from "@/components/card/UserCard";
+import { BASE_URL } from "@/utils/constant";
 
 async function fetchUsers() {
-  const users = await fetch("https://api.escuelajs.co/api/v1/users?limit=8", {
+  const users = await fetch(`${BASE_URL}users?limit=8`, {
     cache: "no-store",
   });
   return await users.json();

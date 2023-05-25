@@ -22,6 +22,7 @@ export default function FormComponent() {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [imageURL, setImageURL] = useState("");
+  const [previewImage, setPreviewImage] = useState(null);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -36,6 +37,29 @@ export default function FormComponent() {
 
     fetchCategories();
   }, []);
+
+  function DropFileZone({ field, form }) {
+    const handleChange = (event) => {
+      const file = event.currentTarget.files[0];
+      form.setFieldValue(field.name, file);
+      setPreviewImage(URL.createObjectURL(file));
+    };
+    return (
+      <>
+        <input
+          id="dropzone-file"
+          type="file"
+          name="file"
+          onChange={handleChange}
+          className="hidden"
+         
+        />
+        {previewImage && (
+          <img src={previewImage} alt="preview" className="rounded-md object-cover h-full w-full" />
+        )}
+      </>
+    );
+  }
 
   const FILE_SIZE = 1024 * 1024 * 10; // 10MB
   const SUPPORTED_FORMATS = [
@@ -208,7 +232,7 @@ export default function FormComponent() {
                   htmlFor="dropzone-file"
                   className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                 >
-                  <div className="flex s flex-col items-center justify-center pt-5 pb-6">
+                  <div className={`${previewImage && `hidden`} flex flex-col items-center justify-center`}>
                     <svg
                       aria-hidden="true"
                       className="w-10 h-10 mb-3 text-gray-400"
@@ -218,14 +242,14 @@ export default function FormComponent() {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                       ></path>
                     </svg>
                     <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                      <span class="font-semibold">Click to upload</span> or drag
+                      <span className="font-semibold">Click to upload</span> or drag
                       and drop
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -245,15 +269,14 @@ export default function FormComponent() {
                 {(msg) => <div className="text-red-600">{msg}</div>}
               </ErrorMessage>
               <div className="flex justify-center">
-                <Button
+                <button
                   type="submit"
-                  fullWidth
-                  sx={{ mt: 3, mb: 2 }}
+                
                   disabled={isSubmitting}
-                  className={`${SUB_HEADING.className} text-white lg:flex bg-[#E73B7B] hover:bg-[#BC2D62] focus:ring-4 focus:outline-none font-light max-md:rounded-2xl md:rounded-3xl md:px-5 md:py-2 py-1 px-4 text-center `}
+                  className={`text-white flex mt-7 mb-4 w-full text-center lg:flex bg-[#E73B7B] hover:bg-[#BC2D62] focus:ring-4 justify-center focus:outline-none font-light max-md:rounded-2xl md:rounded-3xl md:px-5 md:py-2 py-1 px-4 ${SUB_HEADING.className}`}
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
-                </Button>
+                </button>
               </div>
             </Form>
           )}
@@ -263,25 +286,4 @@ export default function FormComponent() {
   );
 }
 
-function DropFileZone({ field, form }) {
-  const [previewImage, setPreviewImage] = useState(null);
-  const handleChange = (event) => {
-    const file = event.currentTarget.files[0];
-    form.setFieldValue(field.name, file);
-    setPreviewImage(URL.createObjectURL(file));
-  };
-  return (
-    <>
-      <input
-        id="dropzone-file"
-        type="file"
-        name="file"
-        onChange={handleChange}
-        className="hidden"
-      />
-      {previewImage && (
-        <img src={previewImage} alt="preview" className="mt-2 h-20 w-full" />
-      )}
-    </>
-  );
-}
+
