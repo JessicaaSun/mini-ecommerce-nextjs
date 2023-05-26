@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 
 async function fetchProductById(id) {
   const product = await fetch(
-    `${BASE_URL}}products/${id}`,
+    `${BASE_URL}products/${id}`,
     {
       cache: "no-store",
     }
