@@ -164,7 +164,7 @@ export default function FormComponent() {
                   type="text"
                   id="title"
                   name="title"
-                  className="border-transparent bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="border-transparent bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block w-full p-2.5"
                 />
                 <ErrorMessage
                   name="title"
@@ -180,7 +180,7 @@ export default function FormComponent() {
                   type="number"
                   id="price"
                   name="price"
-                  className="w-full border-transparent bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="w-full border-transparent bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block p-2.5"
                 />
                 <ErrorMessage
                   name="price"
@@ -197,7 +197,7 @@ export default function FormComponent() {
                   type="textarea"
                   id="description"
                   name="description"
-                  className="bg-gray-50 border-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block w-full p-2.5 "
                 />
                 <ErrorMessage
                   name="description"
@@ -211,7 +211,7 @@ export default function FormComponent() {
                 </label>
                 <Field
                   as="select"
-                  className=" bg-gray-50 border-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className=" bg-gray-50 border-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#E73B7B] focus:border-[#E73B7B] block w-full p-2.5 "
                   name="categoryId"
                 >
                   {categories.map((category) => (
@@ -226,7 +226,7 @@ export default function FormComponent() {
               <div className="flex mt-3 items-center justify-center w-full">
                 <label
                   htmlFor="dropzone-file"
-                  className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                  className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   "
                 >
                   <div className={`${previewImage && `hidden`} flex flex-col items-center justify-center`}>
                     <svg
@@ -244,11 +244,11 @@ export default function FormComponent() {
                         d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                       ></path>
                     </svg>
-                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                    <p className="mb-2 text-sm text-gray-500  ">
                       <span className="font-semibold">Click to upload</span> or drag
                       and drop
                     </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                    <p className="text-xs text-gray-500  ">
                       SVG, PNG, JPG or GIF (MAX. 800x400px)
                     </p>
                   </div>

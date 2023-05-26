@@ -4,7 +4,7 @@ import { GLOBAL_COLOR } from "@/constants/colors";
 
 const FooterComponent = () => {
   return (
-    <footer className={`bg-[${GLOBAL_COLOR.primary}] text-white shadow dark:bg-gray-900 pb-4`}>
+    <footer className={`bg-[${GLOBAL_COLOR.primary}] text-white shadow`}>
       <div className="w-full max-w-screen-xl max-lg:px-8 max-md:px-4 lg:mx-auto py-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
@@ -16,11 +16,11 @@ const FooterComponent = () => {
               className="h-8 mr-3"
               alt="Flowbite Logo"
             /> */}
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap">
               Jules
             </span>
           </a>
-          <ul className={`${SUB_HEADING.className} flex flex-wrap items-center mb-6 text-sm font-medium sm:mb-0 dark:text-gray-400`}>
+          <ul className={`${SUB_HEADING.className} flex flex-wrap items-center mb-6 text-sm font-medium sm:mb-0 `}>
             <li>
               <a href="#" className="mr-4 hover:underline md:mr-6 ">
                 About
@@ -44,7 +44,7 @@ const FooterComponent = () => {
           </ul>
         </div>
         <hr className="my-6 sm:mx-auto lg:my-7" />
-        <span className="block text-sm sm:text-center dark:text-gray-400">
+        <span className="block text-sm sm:text-center">
           © 2023{" "}
           <a href="https://flowbite.com/" className="text-[] hover:underline">
             Jules™

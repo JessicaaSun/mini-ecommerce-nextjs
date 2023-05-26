@@ -92,7 +92,7 @@ const NavbarComponent = () => {
               <li>
                 <a
                   href="/about"
-                  className="block hover:text-[#E73B7B] py-2 pl-3 pr-4 rounded  md:hover:bg-transparent dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  className="block hover:text-[#E73B7B] py-2 pl-3 pr-4 rounded  md:hover:bg-transparent "
                 >
                   About
                 </a>
@@ -100,7 +100,7 @@ const NavbarComponent = () => {
               <li>
                 <Link
                   href="/dashboard"
-                  className="block hover:text-[#E73B7B] py-2 pl-3 pr-4 md:hover:bg-transparent dark:border-gray-700"
+                  className="block hover:text-[#E73B7B] py-2 pl-3 pr-4 md:hover:bg-transparent"
                 >
                   Dashboard
                 </Link>
