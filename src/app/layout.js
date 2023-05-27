@@ -10,7 +10,12 @@ export const metadata = {
   title: "Jules",
   description: "Your 24/7 shopping place",
   openGraph: {
-    images: thumbnail,
+    images: [
+      {
+        url: thumbnail,
+        alt: "Jules Thumbnail",
+      },
+    ],
     title: "Jules",
     description: "Your 24/7 shopping place",
   },
