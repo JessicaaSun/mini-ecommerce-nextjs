@@ -10,7 +10,8 @@ export const metadata = {
   title: "Jules",
   description: "Your 24/7 shopping place",
   openGraph: {
-    images: thumbnail,
+    images:
+      "https://advancedbytez.com/wp-content/uploads/2022/03/Accessibility-for-your-Online-eCommerce-Store.jpg",
     title: "Jules",
     description: "Your 24/7 shopping place",
   },
@@ -19,7 +20,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
       <body>
         <NavbarComponent />
         <div className="pt-12">{children}</div> <FooterComponent />
