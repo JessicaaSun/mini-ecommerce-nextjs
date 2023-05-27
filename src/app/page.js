@@ -18,7 +18,6 @@ export const metadata = {
 export default async function Home() {
   return (
     <main className="bg-gradient-to-tr from-blue-200 to-purple-200 flex text-[black] w-full  max-md:px-10 md:px-16 max-md:pt-24 max-lg:pt-28 lg:py-7 flex-col items-center justify-between">
-        <Suspense fallback={<Loading />}>
       <section>
         <div className="lg:ml-[40px] flex max-lg:pb-24 h w-full justify-between">
           <div className="flex max-md:text-center lg:w-1/2 w-full align-baseline justify-center flex-col">
@@ -40,9 +39,13 @@ export default async function Home() {
           </div>
         </div>
       </section>
-    
+
+      <Suspense fallback={<Loading />}>
         <section>
-          <ProductPage />
+          <h1 className="pb-[60px] text-center max-sm:pb-[30px] lg:text-[40px] max-sm:text-[26px]">
+            Popular Products
+          </h1>
+          <ProductPage isProductPage={false} />
         </section>
         <section>
           <CategoryPage />
@@ -51,6 +54,9 @@ export default async function Home() {
         <section
           className={`${SUB_HEADING.className}  pb-[100px] lg:px-[70px] sm:px-[50px] md:px-[30px] pt-[130px] max-sm:pt-[70px] text-center`}
         >
+          <h1 className="pb-[60px] max-sm:pb-[30px] text-[40px] max-sm:text-[26px]">
+            Users
+          </h1>
           <UserPage />
         </section>
       </Suspense>

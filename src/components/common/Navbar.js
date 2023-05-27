@@ -18,11 +18,11 @@ const NavbarComponent = () => {
     <header>
       <nav className={`bg-[#3D2698] text-white fixed w-full z-20 top-0 left-0`}>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between max-lg:py-3 max-lg:px-4 xl:mx-auto lg:px-7 lg:py-[1.3rem]">
-          <a href="#" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="tracking-wider hover:text-[#E73B7B] self-center text-2xl font-semibold whitespace-nowrap">
               Jules
             </span>
-          </a>
+          </Link>
           <div className="flex md:order-2">
             <ul
               className={`flex ${
@@ -31,7 +31,7 @@ const NavbarComponent = () => {
                 isMobileMenuOpen ? "flex" : "hidden"
               }`}
             >
-              <li>
+              {/* <li>
                 <Link
                   href="/"
                   className={`block py-2 hover:text-[#E73B7B] pr-10 rounded  `}
@@ -39,14 +39,16 @@ const NavbarComponent = () => {
                 >
                   Help
                 </Link>
-              </li>
+              </li> */}
             </ul>
+            <Link href={"/sign-in"}>
             <button
               type="button"
               className={`${SUB_HEADING.className} max-lg:hidden lg:flex bg-[#E73B7B] hover:bg-[#BC2D62] focus:ring-4 focus:outline-none font-light md:rounded-3xl md:px-5 md:py-2 py-1 px-4 text-center `}
             >
               Sign in
             </button>
+            </Link>
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
@@ -91,18 +93,18 @@ const NavbarComponent = () => {
               </li>
               <li>
                 <a
-                  href="/about"
+                  href="/products"
                   className="block hover:text-[#E73B7B] py-2 pl-3 pr-4 rounded  md:hover:bg-transparent "
                 >
-                  About
+                  Products
                 </a>
               </li>
               <li>
                 <Link
-                  href="/dashboard"
+                  href="/contact-us"
                   className="block hover:text-[#E73B7B] py-2 pl-3 pr-4 md:hover:bg-transparent"
                 >
-                  Dashboard
+                  Contact us
                 </Link>
               </li>
               <li>
@@ -113,14 +115,14 @@ const NavbarComponent = () => {
                   Add product
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/help"
                   className="lg:hidden hover:text-[#E73B7B] block py-2 pl-3 pr-4 rounded md:hover:bg-transparent"
                 >
                   Help
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/sign-in"

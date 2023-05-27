@@ -146,7 +146,6 @@ export default function FormComponent() {
             values.images = image;
 
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
               insertProduct(values, resetForm).then((resp) => {
                 alert("Insert product successfully");
               });

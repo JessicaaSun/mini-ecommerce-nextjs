@@ -16,7 +16,7 @@ const CategoryPage = async () => {
   const categories = await fetchCategories();
   return (
     <div>
-      <div className="pt-[130px] text- max-sm:pt-[60px] text-center">
+      <div className="text- max-sm:pt-[60px] text-center">
         <h1 className="pb-[60px] max-sm:pb-[30px] text-[40px] max-sm:text-[26px]">
           Categories
         </h1>

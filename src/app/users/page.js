@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Suspense } from "react";
 import UserCard from "@/components/card/UserCard";
 import { BASE_URL } from "@/utils/constant";
+import Loading from "../loading";
 
 async function fetchUsers() {
   const users = await fetch(`${BASE_URL}users?limit=8`, {
@@ -13,9 +14,8 @@ const UserPage = async () => {
   const users = await fetchUsers();
   return (
     <div>
-      <h1 className="pb-[60px] max-sm:pb-[30px] text-[40px] max-sm:text-[26px]">
-        Users
-      </h1>
+      <Suspense fallback={<Loading/>}>
+     
       <div className="flex flex-wrap justify-center gap-x-6 lg:gap-x-20 max-lg:gap-x-12 ">
         {users.map((user) => (
           <UserCard
@@ -27,6 +27,7 @@ const UserPage = async () => {
           />
         ))}
       </div>
+      </Suspense>
     </div>
   );
 };
